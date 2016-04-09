@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var moguLen = 20
 
 function repeat(times, str) {
@@ -29,7 +31,7 @@ function drawModal(str) {
 }
 
 function drawMogu() {
-    var header = ""
+    var header = "\n"
 	+ "     **********  /\\\n"
 	+ "  ****************\n"
 	+ " ******************\n"
@@ -45,8 +47,7 @@ function drawMogu() {
 }
 
 function main() {
-    console.log(drawModal("你说的这些我都懂"))
-    console.log(drawMogu())
+    console.log(drawModal(process.argv.slice(2)[0]) + drawMogu())
 }
 
 main()
